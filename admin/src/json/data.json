@@ -1,0 +1,18 @@
+{
+	"info":{
+		"name":"test",
+		"email":"test@test.com",
+		"tel":"123456",
+		"accountType":1,
+		"devicesQuota":5,
+		"expirationDate":"2015-11-11"
+	},
+	"devices":{
+		"devicesQuota":"5",
+		"authorizedDevices":[{"admin":"admin"},{"vip":"vip"}],
+		"d3":"d3",
+		"d4":"d4",
+		"d5":"d5",
+		"d6":"d6"
+	}
+}

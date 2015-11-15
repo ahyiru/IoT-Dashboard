@@ -1,0 +1,49 @@
+doctype html
+html
+	head
+		title mongoose数据操作测试
+	body
+		h1 mongoose数据操作测试
+		if oneDev
+			form(method="POST" action="/update")
+				input(type="hidden", name="oneDev[_id]", value="#{oneDev._id}")
+				.form-group
+					laber(for="inputTitle") deviceId
+					input(type="text" name="oneDev[deviceId]" value="#{oneDev.deviceId}")
+				.form-group
+					laber(for="inputTitle" ) macAddr
+					input(type="text" name="oneDev[macAddr]" value="#{oneDev.macAddr}")
+				.form-group
+					laber(for="inputTitle") status
+					input(type="text" name="oneDev[status]" value="#{oneDev.status}")
+				button(type="submit" style="margin:10px 0 0 135px") 修改数据
+		else
+			form(method="POST" action="/add")
+				.form-group
+					laber(for="inputTitle") deviceId
+					input(type="text" name="dev[deviceId]")
+				.form-group
+					laber(for="inputTitle" ) macAddr
+					input(type="text" name="dev[macAddr]")
+				.form-group
+					laber(for="inputTitle") status
+					input(type="text" name="dev[status]")
+				button(type="submit" style="margin:10px 0 0 135px") 增加数据
+			div 
+				h1 显示输入的数据
+				table
+					thead
+						tr
+							th deviceId
+							th macAddr
+							th status
+							th 修改
+							th 删除
+					tbody
+						each item in dev
+							tr
+								td #{item.deviceId}
+								td #{item.macAddr}
+								td #{item.status}
+								td: a(href="./update/#{item._id}") 修改
+								td: a(href="./delete/#{item._id}") 删除

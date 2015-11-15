@@ -1,0 +1,76 @@
+<div class="aside-wrap b-menu">
+
+  <div class="navi-wrap m-t m-b-sm text-white text-xs">
+    <!-- nav -->
+
+    <nav ui-nav class="navi clearfix ">
+      <!-- list -->
+      <div class="avatar_2 m-b-xs m-t-xs padder">
+        <span gravatar name="{{ account.name }}" width="128" height="128" email-hash="{{ md5(account.email || '') }}"></span>
+      </div>
+      <h4 class="text-center m-b-xs show text-white hidden-folded"><b>{{ account.name }}</b></h4>
+      <h6 class="text-center m-t-xs m-b show hidden-folded f12px ">{{ account.email }}</h6>
+
+      <ul class="nav m-t-md b-menu">
+        <li class="m-l-sm hidden-folded padder m-t-sm m-b-sm text-white text-u-c text-xs">
+          <span>个人信息</span>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="app.profile">
+            <i class="icon-user hidden-xs"></i>
+            <span class="hidden-folded text-sm text-gold font-bold">账户信息</span>
+          </a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="app.devices">
+            <i class="icon-screen-smartphone hidden-xs"></i>
+            <span class="hidden-folded text-sm text-gold font-bold">设备信息</span>
+            <span class="badge bg-white ng-binding m-l-sm m-b-xs">{{ devices.authorizedDevices.length }}</span>
+          </a>
+        </li>
+
+        <li>
+          <div class="btn-group w bg-black text-muted text-u-c no-padder text-xs" dropdown dropdown-append-to-body>
+            <button id="btn-append-to-body" type="button" class="no-padder w btn bg-black" dropdown-toggle>
+
+              <a class=" text-left">
+                <i class="icon-music-tone-alt hidden-xs"></i>
+                <span class="hidden-folded text-sm text-gold font-bold">其他信息</span>
+              </a>
+            </button>
+            <ul class="dropdown-menu w" role="menu" aria-labelledby="btn-append-to-body">
+
+              <li ui-sref-active="active">
+                <a class="wrapper" ui-sref="music.home">
+                  <i class="icon-disc icon"></i>
+                  <span class="hidden-folded">最近添加</span>
+                </a>
+              </li>
+              <li ui-sref-active="active">
+                <a class="wrapper" ui-sref="music.genres">
+                  <i class="icon-list icon"></i>
+                  <span class="hidden-folded">专辑</span>
+                </a>
+              </li>
+              <li ui-sref-active="active">
+                <a class="wrapper" ui-sref="music.artists">
+                  <i class="fa fa-user icon"></i>
+                  <span class="hidden-folded">地址</span>
+                </a>
+              </li>
+              <li ui-sref-active="active">
+                <a class="wrapper" ui-sref="music.playlist({fold:'all'})">
+                  <i class="icon-social-youtube icon"></i>
+                  <span class="hidden-folded">照片</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+      </ul>
+      <!-- / list -->
+    </nav>
+    <!-- nav -->
+  </div>
+</div>
