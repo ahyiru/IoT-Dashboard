@@ -1,6 +1,6 @@
 # IoT-Dashboard
 
-##  基于mongode+nodejs+angular的云系统
+##  基于mongodb+nodejs+angular的云管理系统
 
 ![ds](ds.png)
 
