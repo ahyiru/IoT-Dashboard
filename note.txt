@@ -18,3 +18,36 @@
 修改密码
 添加、删除、修改用户
 添加、删除、修改设备
+
+/***************************************/
+
+1. 标准浏览器API转化
+将html转化成dom，所以自定义的html标签必须符合html的格式
+2. Angular compile
+搜索匹配directive，按照priority排序，并执行directive上的compile方法
+3. Angular link
+执行directive上的link方法，进行scope绑定及事件绑定
+为什么编译的过程要分成compile和link?
+简单的说就是为了解决性能问题，特别是那种model变化会影响dom结构变化的，而变化的结构还会有新的scope绑定及事件绑定，比如ng-repeat
+compile和link的形式
+compile
+function compile(element, attrs, transclude) { ... }
+在compile阶段要执行的函数，返回的function就是link时要执行的function
+常用参数为element和attrs，分别是dom元素和元素上的属性们，其它的以后细说
+较少使用，因为大部分directive是处理dom元素的行为绑定，而不是改变它们
+link
+function link(scope, element, attrs, controller) { ... }
+在link阶段要执行的函数，这个属性只有当compile属性没有设置时才生效
+常用参数为scope，element和attrs，分别是当前元素所在的scope，dom元素和元素上的属性们，其它的以后细说
+directive基本上都会有此函数，可以注册事件，并与scope相绑
+compile和link的使用时机
+compile
+想在dom渲染前对它进行变形，并且不需要scope参数
+想在所有相同directive里共享某些方法，这时应该定义在compile里，性能会比较好
+返回值就是link的function，这时就是共同使用的时候
+link
+对特定的元素注册事件
+需要用到scope参数来实现dom元素的一些行为。
+
+controller link compile运行顺序
+controller>link>compile
