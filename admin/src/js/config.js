@@ -96,4 +96,12 @@ angular.module('app')
     $authProvider.authToken = 'JWT';
     $authProvider.storageType = 'localStorage';
   })*/
+  
+  .run(function(paginationConfig){
+    paginationConfig.boundaryLinks = true;
+    paginationConfig.previousText = '上一页';
+    paginationConfig.nextText = '下一页';
+    paginationConfig.firstText = '首页';
+    paginationConfig.lastText = '尾页';
+  })
 ;

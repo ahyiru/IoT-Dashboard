@@ -51,12 +51,16 @@ color:#20B2AA;
 .ui-grid-pager-count-container{
 	color:red;
 }
-.ebtn,.dbtn{
+/*.ebtn,.dbtn{
 	padding:5px 10px !important;
 }
 .ebtn>button,.dbtn>button{
 	padding:2px 14px !important;
+}*/
+.ebtn,.dbtn{
+	padding:0px 10px !important;
 }
+
 .myph{
 	padding:0px 15px;
 	height:41px;
@@ -70,7 +74,7 @@ color:#20B2AA;
     position:relative;
     overflow:hidden;
 	float:left;
-	margin-right:3px;
+	margin-right:4px;
 }
 .upfile{
     position:absolute;
@@ -78,6 +82,11 @@ color:#20B2AA;
     top:0;
     opacity:0;
 	width:82px;
+	height:30px;
 	cursor:inherit;
+}
+
+ul.pagination{
+	margin:0;
 }
 
