@@ -62,6 +62,7 @@ angular.module('app')
         url: 'devices',
         templateUrl: 'tpl/devices.html',
         resolve: load([
+          'ui.grid','ui.grid.pagination',
           'js/services/account.js',
           'js/controllers/devices.js'
         ])

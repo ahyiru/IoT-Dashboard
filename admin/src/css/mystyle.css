@@ -43,3 +43,41 @@ display:none !important;
 .navbar-brand span{
 color:#20B2AA;
 }
+
+/* 20151117 */
+.ui-grid-render-container{
+	margin-bottom:10px;
+}
+.ui-grid-pager-count-container{
+	color:red;
+}
+.ebtn,.dbtn{
+	padding:5px 10px !important;
+}
+.ebtn>button,.dbtn>button{
+	padding:2px 14px !important;
+}
+.myph{
+	padding:0px 15px;
+	height:41px;
+	line-height:41px;
+}
+.abtn,.upbtn{
+	padding:4px 12px !important;
+}
+
+.upload{
+    position:relative;
+    overflow:hidden;
+	float:left;
+	margin-right:3px;
+}
+.upfile{
+    position:absolute;
+    right:0;
+    top:0;
+    opacity:0;
+	width:82px;
+	cursor:inherit;
+}
+

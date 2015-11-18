@@ -1,0 +1,50 @@
+<div class="modal-header">
+    <h3 class="modal-title">Modal!</h3>
+</div>
+<div class="modal-body">
+	  <form class="form-horizontal">
+	    <div class="row">
+		  <div class="col-sm-6">
+			<div class="form-group">
+			  <label class="col-lg-3 control-label">deviceid</label>
+			  <div class="col-lg-9">
+				<input type="text" class="form-control" ng-model="data.deviceid" placeholder="deviceid">
+				<span class="help-block m-b-none">Example block-level help text here.</span>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-sm-6">
+			<div class="form-group">
+			  <label class="col-lg-3 control-label">macaddr</label>
+			  <div class="col-lg-9">
+				<input type="text" class="form-control" ng-model="data.macaddr" placeholder="macaddr">
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col-sm-6">
+			<div class="form-group">
+			  <label class="col-lg-3 control-label">openid</label>
+			  <div class="col-lg-9">
+				<input type="text" class="form-control" ng-model="data.openid" placeholder="openid">
+				<span class="help-block m-b-none">help text here.</span>
+			  </div>
+			</div>
+		  </div>
+		  <div class="col-sm-6">
+			<div class="form-group">
+			  <label class="col-lg-3 control-label">dname</label>
+			  <div class="col-lg-9">
+				<input type="text" class="form-control" ng-model="data.dname" placeholder="dname">
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </form>
+	</div>
+</div>
+<div class="modal-footer">                  
+    <button class="btn btn-default" ng-click="cancel()">取消</button>
+    <button class="btn btn-primary" ng-click="ok()">确定</button>
+</div>

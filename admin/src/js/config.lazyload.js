@@ -69,6 +69,14 @@ angular.module('app')
           ]
       },
       {
+          name: 'ui.grid.pagination',
+          files: [
+              '../libs/angular/angular-ui-grid/ui-grid.min.js',
+              '../libs/angular/angular-ui-grid/ui-grid.min.css',
+              '../libs/angular/angular-ui-grid/ui-grid.bootstrap.css'
+          ]
+      },
+      {
           name: 'ui.select',
           files: [
               '../libs/angular/angular-ui-select/dist/select.min.js',
