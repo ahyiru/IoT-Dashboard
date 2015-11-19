@@ -45,13 +45,3 @@ app.factory('Account', function ($resource, API_BASE_URL) {
   });*/
 });
 
-/*app.factory('Profile', function($http) {
-  return {
-    getProfile: function() {
-      return $http.get('/api/me');
-    },
-    updateProfile: function(profileData) {
-      return $http.put('/api/me', profileData);
-    }
-  };
-});*/

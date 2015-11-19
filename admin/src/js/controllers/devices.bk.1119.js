@@ -73,27 +73,6 @@ app.controller('DevicesController', function ($rootScope, $scope, $http, $modal,
 	    });
 
 	    // modal
-	    // add
-	    $('.abtn').on('click',function(){
-	    	$scope.data = [];
-	    	var modalInstance = $modal.open({
-		        templateUrl: 'myEditModal.html',
-		        controller: 'ModalInstanceCtrl',
-		        resolve: {
-		          data: function () {
-		            return $scope.data;
-		          }
-		        }
-		      });
-
-		      modalInstance.result.then(function (data) {
-		      	console.log(data);
-		        ddata = data;
-		      }, function () {
-		        console.info('Modal dismissed at: ' + new Date());
-		    });
-	    })
-	    //edit
 	    var edit=$('.mytable .ebtn');
 	    edit.each(function(){
 	    	$(this).on('click',function(){
@@ -113,21 +92,20 @@ app.controller('DevicesController', function ($rootScope, $scope, $http, $modal,
 			      });
 
 			      modalInstance.result.then(function (data) {
-			      	console.log(data);
 			        ddata = data;
 			      }, function () {
 			        console.info('Modal dismissed at: ' + new Date());
 			    });
 	    	})
 	    });
-	    // delete
+
 	    var del=$('.mytable .dbtn');
 	    del.each(function(){
 	    	$(this).on('click',function(){
 	    		var did=$(this).parent().parent().find('td').eq(0).text();
 	    		$scope.data=did;
 	    		var modalInstance = $modal.open({
-			        templateUrl: 'myDelModal.html',
+			        templateUrl: 'myEditModal.html',
 			        controller: 'ModalInstanceCtrl',
 			        resolve: {
 			          data: function () {
@@ -137,7 +115,6 @@ app.controller('DevicesController', function ($rootScope, $scope, $http, $modal,
 			      });
 
 			      modalInstance.result.then(function (data) {
-			      	console.log(data);
 			        ddata = data;
 			      }, function () {
 			        console.info('Modal dismissed at: ' + new Date());
@@ -168,11 +145,73 @@ app.controller('DevicesController', function ($rootScope, $scope, $http, $modal,
     };
   }]);
   //add
-  /*app.controller('addModal', function($scope, $modal) {
+  app.controller('addModal', function($scope, $modal) {
     $scope.data = [];
     $scope.open = function (size) {
       var modalInstance = $modal.open({
         templateUrl: 'myModalContent.html',
+        controller: 'ModalInstanceCtrl',
+        size: size,
+        resolve: {
+          data: function () {
+            return $scope.data;
+          }
+        }
+      });
+
+      modalInstance.result.then(function (data) {
+      	console.log(data);
+        ddata = data;
+      }, function () {
+        console.info('Modal dismissed at: ' + new Date());
+      });
+    };
+  });
+  //edit
+  app.controller('myModal', function($scope, $modal) {
+    /*$scope.data = {};
+    var tempUrl='myDelModal.html';
+
+    var edit=$('.mytable .ebtn');console.log(edit.length)
+    edit.each(function(){
+    	$(this).on('click',function(){
+    		var tr=$(this).parent().parent(),tdv=[];
+    		for(var i=0;i<tr.length-2;i++){
+    			tdv[i]=tr.find('td').eq(i).text();
+    		}
+    		console.log(tdv);
+    	})
+    })*/
+
+    /*$scope.open = function (size) {
+
+    	console.log($(this));
+
+      var modalInstance = $modal.open({
+        templateUrl: tempUrl,
+        controller: 'ModalInstanceCtrl',
+        size: size,
+        resolve: {
+          data: function () {
+            return $scope.data;
+          }
+        }
+      });
+
+      modalInstance.result.then(function (data) {
+      	console.log(data);
+        ddata = data;
+      }, function () {
+        console.info('Modal dismissed at: ' + new Date());
+      });
+    };*/
+  });
+  /*//delete
+  app.controller('myModal', function($scope, $modal) {
+    $scope.data = {};
+    $scope.open = function (size) {
+      var modalInstance = $modal.open({
+        templateUrl: 'myDelModal.html',
         controller: 'ModalInstanceCtrl',
         size: size,
         resolve: {

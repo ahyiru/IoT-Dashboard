@@ -7,16 +7,138 @@
             <h4>个人信息</h4>
           </div>
           <div class="clear wrapper">
-            <div class="m-t-sm">
+            <!-- <div class="m-t-sm">
               <small class="show font-thin wrapper block">用户名</small>
               <div ng-show="button"></div><span class="h3 text-black text-lg font-thin wrapper block" ng-show="button">{{ account.displayName || 'Set your name' }}</span> <input class="form-control w" style="margin:9px 0" ng-hide="button" type="text" ng-model="profile.name" placeholder="{{ account.displayName }}"> <small class="show wrapper font-thin block">邮 箱</small> <span class="h3 text-black text-lg font-thin wrapper block" ng-show="button">{{account.email}}</span> <input class="form-control w" style="margin:9px 0" ng-hide="button" ng-model="profile.mail" type="text" placeholder="{{ account.email || '&nbsp;' }}">
             </div>
             <div class="wrapper">
               <div class="m-t-md"></div><button ng-click="button = !button;" ng-show="button" type="button" class="w-sm btn text-black bg-light b-a m-r-md">编辑信息</button> <button popover-placement="right" popover="Password reset" popover-trigger="focus" ng-show="button" type="button" class="w-sm btn text-black bg-light b-a m-r-md">重置密码</button> <button ng-click="button = !button;" type="button" ng-show="!button" class="m-r-md w-sm btn w-xs btn-success">保存</button> <button ng-click="button = !button" type="button" ng-show="!button" class="m-r-md w-sm btn w-xs btn-default">取消</button>
-            </div>
+            </div> -->
+			
+			<tabset>
+			  <tab heading="基本信息">
+				<div class="list-group bg-white">
+				  <a href class="list-group-item">
+					<i class="fa fa-fw fa-expeditedssl text-danger"></i> Token
+					<span class="pull-right">{{token}}</span>
+				  </a>
+				  <a href class="list-group-item">
+					<i class="fa fa-fw fa-key"></i> AccessKey
+					<span class="pull-right">{{accesskey}}</span>
+				  </a>
+				  <a href class="list-group-item">
+					<i class="fa fa-fw fa-envelope"></i> 邮箱
+					<span class="pull-right">{{email}}</span>
+				  </a>
+				  <a href class="list-group-item">
+					<i class="fa fa-fw fa-user"></i> 用户名
+					<span class="pull-right">{{name}}</span>
+				  </a>
+				  <a href class="list-group-item">
+					<i class="fa fa-fw fa-phone"></i> 电话
+					<span class="pull-right">{{tel}}</span>
+				  </a>
+				  <a href class="list-group-item">
+					<i class="fa fa-fw fa-comments-o"></i> 微信
+					<span class="pull-right">{{wexin}}</span>
+				  </a>
+				  <a href class="list-group-item">
+					<i class="fa fa-fw fa-map-marker"></i> 地址
+					<span class="pull-right">{{addr}}</span>
+				  </a>
+				  <a href class="list-group-item">
+					<i class="fa fa-fw fa-lock"></i> 等级
+					<span class="pull-right">{{role}}</span>
+				  </a>
+				</div>
+			  </tab>
+			  <tab heading="更新信息">
+				<form class="form-horizontal" style="margin-top:20px;">
+					<div class="row">
+						<div class="form-group">
+						  <label class="col-lg-3 control-label">用户名</label>
+						  <div class="col-lg-5">
+							<input type="text" class="form-control" ng-model="data[0]" placeholder="用户名">
+							<span class="help-block m-b-none hide">Example block-level help text here.</span>
+						  </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group">
+						  <label class="col-lg-3 control-label">电话</label>
+						  <div class="col-lg-5">
+							<input type="text" class="form-control" ng-model="data[1]" placeholder="电话">
+						  </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group">
+						  <label class="col-lg-3 control-label">微信</label>
+						  <div class="col-lg-5">
+							<input type="text" class="form-control" ng-model="data[2]" placeholder="微信">
+							<span class="help-block m-b-none hide">help text here.</span>
+						  </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group">
+						  <label class="col-lg-3 control-label">地址</label>
+						  <div class="col-lg-5">
+							<input type="text" class="form-control" ng-model="data[3]" placeholder="地址">
+						  </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group">
+							<div class="col-lg-offset-3 col-lg-5">
+							  <button type="submit" class="btn btn-success btn-block" ng-disabled="form.$invalid">提交</button>
+							</div>
+						</div>
+					</div>
+				 </form>
+			  </tab>
+			  <tab heading="设置">
+				<form class="form-horizontal" style="margin-top:20px;">
+					<div class="row">
+						<div class="form-group">
+						  <label class="col-lg-3 control-label">原密码</label>
+						  <div class="col-lg-5">
+							<input type="password" class="form-control">
+							<span class="help-block m-b-none hide">Example block-level help text here.</span>
+						  </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group">
+						  <label class="col-lg-3 control-label">新密码</label>
+						  <div class="col-lg-5">
+							<input type="password" class="form-control">
+						  </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group">
+						  <label class="col-lg-3 control-label">重复新密码</label>
+						  <div class="col-lg-5">
+							<input type="password" class="form-control">
+							<span class="help-block m-b-none hide">help text here.</span>
+						  </div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group">
+							<div class="col-lg-offset-3 col-lg-5">
+							  <button type="submit" class="btn btn-success btn-block" ng-disabled="form.$invalid">提交</button>
+							</div>
+						</div>
+					</div>
+				 </form>
+			  </tab>
+			</tabset>
+			
           </div>
         </div>
-        <div class="col-sm-12 col-xs-12 col-md-5 col-lg-5 no-padder bg-sd">
+        <div class="col-sm-12 col-xs-12 col-md-5 col-lg-5 no-padder bg-sd hide">
           <div class="article b-b" style="border-color:#edf1f2!important">
             <h4>Subscription status:
               <span class="text-info" ng-show="account.accountType == 0">Free</span>

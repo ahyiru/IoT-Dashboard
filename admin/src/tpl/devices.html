@@ -5,7 +5,12 @@
     <!-- <div class="row row-sm col-lg-7 col-md-7 col-sm-12 b-r m-n" style="min-height:305px;"> -->
 	<div class="row row-sm col-lg-12 col-md-12 col-sm-12 m-n" style="min-height:305px;">
       <div class="col-lg-12 col-md-12 col-sm-12 m-t center-block ">
-	  
+		<script type="text/ng-template" id="myEditModal.html">
+		  <div ng-include="'tpl/mymodal.html'"></div>
+		</script>
+		<script type="text/ng-template" id="myDelModal.html">
+		  <div ng-include="'tpl/del_modal.html'"></div>
+		</script>
         <div class="panel panel-default">
 			<div class="panel-heading">
 			  设备列表
@@ -18,12 +23,12 @@
 					  <input type="file" class="upfile">
 					  <input type="button" class="btn btn-info upbtn" value="批量导入">
 				  </div>
-				  <span ng-controller="myModal">
+				  <!-- <span ng-controller="addModal">
 					<script type="text/ng-template" id="myModalContent.html">
 					  <div ng-include="'tpl/mymodal.html'"></div>
-					</script>
+					</script> -->
 					<button class="btn btn-success abtn" ng-click="open(lg)"><i class="fa fa-plus"></i> 添加</button>
-				  </span>
+				  <!-- </span> -->
 				</div>
 				              
 			  </div>
@@ -31,9 +36,10 @@
 			  </div>
 			  <div class="col-sm-3">
 				<div class="input-group">
-				  <input type="text" class="input-sm form-control" id="mysch" placeholder="Search">
+				  <input type="text" class="input-sm form-control" id="mysch" placeholder="Search" ng-model="mysch">
 				  <span class="input-group-btn">
 					<button class="btn btn-sm btn-success" type="button">Go!</button>
+					<!-- <i class="fa fa-search"></i> -->
 				  </span>
 				</div>
 			  </div>
@@ -61,12 +67,12 @@
 			  <div class="row">
 				<div class="col-sm-3 hidden-xs">
 				  <select class="input-sm form-control w-sm inline v-middle">
-					<option value="0">Bulk action</option>
-					<option value="1">Delete selected</option>
-					<option value="2">Bulk edit</option>
-					<option value="3">Export</option>
+					<option value="0">种类1</option>
+					<option value="1">种类2</option>
+					<option value="2">种类3</option>
+					<option value="3">种类4</option>
 				  </select>
-				  <button class="btn btn-sm btn-default">Apply</button>                  
+				  <button class="btn btn-sm btn-default">筛选</button>                  
 				</div>
 				<div class="col-sm-3 text-center">
 				  <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
