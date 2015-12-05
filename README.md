@@ -124,3 +124,7 @@
 #### demo http://ahyiru.duapp.com/
 
 ![dm](demo.png)
+
+### Update V0.0.2
+
+#### 更新第三方oauth2登录。
